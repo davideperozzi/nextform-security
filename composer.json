@@ -1,6 +1,6 @@
 {
-    "name": "davideperozzi/nextform-filehandler",
-    "description": "File handler for the nextform php library",
+    "name": "davideperozzi/nextform-security",
+    "description": "Security for the nextform php library",
     "type": "library",
     "license": "MIT",
     "authors": [
