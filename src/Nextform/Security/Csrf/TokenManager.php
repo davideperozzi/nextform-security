@@ -34,7 +34,7 @@ class TokenManager
      * @param string $id
      * @return TokenModel
      */
-    private function generateToken(string $id)
+    private function generateToken($id)
     {
         return $this->storage->setToken($this->generator->generate($id));
     }
@@ -43,7 +43,7 @@ class TokenManager
      * @param string $id
      * @return TokenModel
      */
-    public function getToken(string $id)
+    public function getToken($id)
     {
         if ($this->storage->containsToken($id)) {
             return $this->storage->getToken($id);
@@ -56,7 +56,7 @@ class TokenManager
      * @param string $id
      * @return TokenModel
      */
-    public function refreshToken(string $id)
+    public function refreshToken($id)
     {
         return $this->generateToken($id);
     }
@@ -65,7 +65,7 @@ class TokenManager
      * @param string $id
      * @return boolean
      */
-    public function deleteToken(string $id)
+    public function deleteToken($id)
     {
         $this->storage->deleteToken($id);
     }

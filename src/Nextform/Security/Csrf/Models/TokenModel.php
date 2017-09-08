@@ -23,7 +23,7 @@ class TokenModel implements \Serializable
      * @param string $id
      * @param string $value
      */
-    public function __construct(string $id, string $value)
+    public function __construct($id, $value)
     {
         $this->id = $id;
         $this->value = $value;

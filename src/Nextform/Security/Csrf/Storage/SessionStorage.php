@@ -41,7 +41,7 @@ class SessionStorage extends AbstractStorage
     /**
      * {@inheritDoc}
      */
-    public function getToken(string $id)
+    public function getToken($id)
     {
         $scope = $this->getScope();
 
@@ -55,7 +55,7 @@ class SessionStorage extends AbstractStorage
     /**
      * {@inheritDoc}
      */
-    public function containsToken(string $id)
+    public function containsToken($id)
     {
         $scope = $this->getScope();
 
@@ -79,7 +79,7 @@ class SessionStorage extends AbstractStorage
     /**
      * {@inheritDoc}
      */
-    public function deleteToken(string $id)
+    public function deleteToken($id)
     {
         if ($this->containsToken($id)) {
             unset($_SESSION[self::STORAGE_KEY][$id]);

@@ -23,7 +23,7 @@ class OpensslGenerator extends AbstractGenerator
      * @param boolean $strong
      * @throws OpensslNotFoundException if OpenSSL extension was not found
      */
-    public function __construct(int $bitLength = 128, bool $strong = true)
+    public function __construct($bitLength = 128, $strong = true)
     {
         if ( ! function_exists('openssl_random_pseudo_bytes')) {
             throw new OpensslNotFoundException(
@@ -39,7 +39,7 @@ class OpensslGenerator extends AbstractGenerator
      * @throws GenerationFailedException if openssl is not working properly
      * @return TokenModel
      */
-    public function generate(string $id)
+    public function generate($id)
     {
         $bytes = openssl_random_pseudo_bytes($this->bitLength / 8, $this->strong);
 

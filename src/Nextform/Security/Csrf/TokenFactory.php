@@ -11,7 +11,7 @@ trait TokenFactory
      * @param string $value
      * @return TokenModel
      */
-    public function createToken(string $id, string $value): TokenModel
+    public function createToken($id, $value)
     {
         return new TokenModel($id, $value);
     }

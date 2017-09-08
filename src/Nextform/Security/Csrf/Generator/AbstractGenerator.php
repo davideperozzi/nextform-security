@@ -12,5 +12,5 @@ abstract class AbstractGenerator
      * @param string $id
      * @return TokenModel
      */
-    abstract public function generate(string $id);
+    abstract public function generate($id);
 }
