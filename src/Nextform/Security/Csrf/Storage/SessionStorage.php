@@ -3,6 +3,7 @@
 namespace Nextform\Security\Csrf\Storage;
 
 use Nextform\Security\Csrf\Models\TokenModel;
+use Nextform\Security\Csrf\Exception\SessionNotStartedException;
 
 class SessionStorage extends AbstractStorage
 {
@@ -16,7 +17,7 @@ class SessionStorage extends AbstractStorage
     {
         if (session_status() == PHP_SESSION_NONE) {
             if (false == @session_start()) {
-                throw new Exception\SessionNotStartedException(
+                throw new SessionNotStartedException(
                     'Something went wrong while starting the session.
                     Start it manually and make sure no header was
                     sent before the session is going to be started'
